@@ -3,10 +3,10 @@ home: true
 layout: Blog
 icon: home
 title: 主页
-heroImage: /logo.svg
-heroText: 蝉沐风
+heroImage: /logo.png
+heroText: 蝉沐风的个人网站
 heroFullScreen: true
-tagline: 你可以在这里放置你的口号与标语
+tagline: Chanmufeng's Personal Website
 projects:
   - icon: project
     name: 项目名称
@@ -33,7 +33,7 @@ projects:
     desc: 伙伴详细介绍
     link: https://你的伙伴链接
 
-  - icon: /logo.svg
+  - icon: /logo.png
     name: 自定义项目
     desc: 自定义详细介绍
     link: https://你的自定义链接

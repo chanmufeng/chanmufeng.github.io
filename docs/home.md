@@ -2,7 +2,7 @@
 home: true
 icon: home
 title: 项目主页
-heroImage: /logo.svg
+heroImage: /logo.png
 heroText: 项目名称
 tagline: 你可以在这里放置或是整个项目的描述。
 actions:
