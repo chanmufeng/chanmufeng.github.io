@@ -1,46 +1,111 @@
-import { sidebar } from "vuepress-theme-hope";
+import {sidebar} from "vuepress-theme-hope";
 
-export default sidebar([
-  "/",
-  "/home",
-  "/slide",
-  {
-    text: "如何使用",
-    icon: "creative",
-    prefix: "/guide/",
-    link: "/guide/",
-    children: "structure",
-  },
-  {
-    text: "文章",
-    icon: "note",
-    prefix: "/posts/",
-    children: [
-      {
-        text: "文章 1-4",
-        icon: "note",
-        collapsable: true,
-        prefix: "article/",
-        children: ["article1", "article2", "article3", "article4"],
-      },
-      {
-        text: "文章 5-12",
-        icon: "note",
-        children: [
-          {
-            text: "文章 5-8",
-            icon: "note",
-            collapsable: true,
-            prefix: "article/",
-            children: ["article5", "article6", "article7", "article8"],
-          },
-          {
-            text: "文章 9-12",
-            icon: "note",
-            children: ["article9", "article10", "article11", "article12"],
-          },
+export default sidebar({
+        "/guide": [
+            "",
+            "home",
+            "slide",
+            {
+                text: "如何使用",
+                icon: "creative",
+                prefix: "/guide/",
+                link: "/guide/",
+                children: "structure",
+            },
+
         ],
-      },
-    ],
-  },
-]);
+        "/posts/basic/": [
+            {
+                text: "设计模式",
+                icon: "guide",
+                prefix: "design-pattern/",
+                children: [
+                    "单例模式",
+                    "工厂模式",
+                    "静态代理模式",
+                    "动态代理模式",
+                ]
+            },
+            {
+                text: "设计原则",
+                icon: "guide",
+                prefix: "design-principle/",
+                children: [
+                    "开闭原则",
+                    "依赖倒置原则",
+                ]
+            },
+        ],
+
+        // MySQL
+        "/posts/storage/MySQL": [
+            {
+                text: "基础篇",
+                icon: "strong",
+                children: [
+                    "一条SELECT语句是如何执行的",
+                    "一条UPDATE语句是如何执行的",
+                ]
+            },
+            {
+                text: "索引篇",
+                icon: "condition",
+                children: [
+                    "为什么MySQL的主键查询这么快",
+                    "从根儿上理解索引",
+                    "MySQL索引的正确使用姿势",
+                    "为什么不建议你使用SELECT*"
+                ]
+            },
+            {
+                text: "事务与锁",
+                icon: "lock",
+                children: [
+                    "事务的隔离性与MVCC",
+                ]
+            },
+            {
+                text: "优化",
+                icon: "cycle",
+                children: [
+                    "MySQL优化的5个维度",
+                ]
+            },
+        ],
+
+        // Redis
+        "/posts/storage/Redis": [
+            {
+                text: "持久化",
+                icon: "strong",
+                children: [
+                    "Redis持久化——AOF",
+                    "Redis持久化——RDB",
+                ]
+            },
+            {
+                text: "事务",
+                icon: "condition",
+                children: [
+                    "鸡肋的Redis事务",
+                ]
+            },
+
+        ],
+
+        // ES
+        "/posts/storage/ElasticSearch": [
+            "m1芯片电脑安装cerebro",
+            "Google搜索为什么不能无限分页？",
+
+        ],
+
+        // 并发
+        "/posts/concurrency": [
+            "用「闪电侠」解释一下进程和线程",
+            "缓存一致性与内存屏障",
+
+        ]
+
+    }
+);

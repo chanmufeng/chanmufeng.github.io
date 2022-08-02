@@ -7,46 +7,40 @@ export default navbar([
   {
     text: "技术博文",
     icon: "edit",
-    prefix: "/posts/",
+    prefix: "/posts",
     children: [
       {
         text: "内功心法",
         icon: "edit",
-        prefix: "article/",
+        prefix: "/basic",
         children: [
-          { text: "设计模式", icon: "edit", link: "article1" },
-          { text: "设计原则", icon: "edit", link: "article2" },
-          "article3",
-          "article4",
+          { text: "设计模式", icon: "edit", link: "/design-pattern/" },
+          { text: "设计原则", icon: "edit", link: "/design-principle/开闭原则" },
         ],
       },
       {
         text: "存储篇",
         icon: "edit",
+        prefix: "/storage",
         children: [
           {
             text: "MySQL",
-            icon: "edit",
-            link: "article/article5",
+            icon: "mysql",
+            link: "/MySQL",
           },
           {
             text: "Redis",
-            icon: "edit",
-            link: "article/article6",
+            icon: "workingDirectory",
+            link: "/Redis",
           },
           {
             text: "ElasticSearch",
             icon: "edit",
-            link: "article/article6",
+            link: "/ElasticSearch",
           },
-          "article/article7",
-          "article/article8",
         ],
       },
-      { text: "并发篇", icon: "edit", link: "article9" },
-      { text: "文章 10", icon: "edit", link: "article10" },
-      "article11",
-      "article12",
+      { text: "并发篇", icon: "edit", link: "/concurrency" },
     ],
   },
   {
