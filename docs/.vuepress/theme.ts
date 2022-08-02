@@ -3,18 +3,18 @@ import navbar from "./navbar";
 import sidebar from "./sidebar";
 
 export default hopeTheme({
-    hostname: "https://vuepress-theme-hope-v2-demo.mrhope.site",
+    hostname: "https://www.chanmufeng.com",
 
     author: {
         name: "蝉沐风",
-        url: "https://mrhope.site",
+        url: "https://www.chanmufeng.com",
     },
 
     iconAssets: "iconfont",
 
     logo: "/logo.png",
 
-    repo: "vuepress-theme-hope/vuepress-theme-hope",
+    // repo: "vuepress-theme-hope/vuepress-theme-hope",
 
     docsDir: "demo/src",
 
@@ -32,8 +32,8 @@ export default hopeTheme({
     pageInfo: ["Author", "Original", "Date", "Category", "Tag", "ReadingTime"],
 
     blog: {
-        description: "一个前端开发者",
-        intro: "/intro.html",
+        description: "一个后端开发者",
+        intro: "/about/",
         medias: {
             Wechat: "https://img2022.cnblogs.com/blog/2604220/202201/2604220-20220127221859712-131274295.png",
             Zhihu: "https://www.zhihu.com/people/chan-mu-feng",

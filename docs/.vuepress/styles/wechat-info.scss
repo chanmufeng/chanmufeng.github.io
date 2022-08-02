@@ -1,0 +1,63 @@
+.wechat-info {
+  padding: 0.5rem;
+  font-family: var(--font-family-fancy);
+  border-radius: 6px;
+  box-shadow: 0 1px 3px 1px var(--card-shadow);
+
+  .page & {
+    background: var(--bg-color-float);
+  }
+
+  .blogger {
+    width: 8rem;
+
+    padding: 0.5rem;
+    text-align: center;
+  }
+
+  .wechat-img {
+    //height: 8rem;
+    margin: 0 auto;
+
+    &.round {
+      border-radius: 50%;
+    }
+  }
+
+  .blogger-name {
+    margin: 1rem auto;
+    font-size: 22px;
+  }
+
+  .blogger-description {
+    margin: 1rem auto;
+    font-size: 14px;
+  }
+
+  .num-wrapper {
+    display: flex;
+    width: 80%;
+    margin: 0 auto 1rem;
+
+    > div {
+      width: 25%;
+      font-size: 13px;
+      text-align: center;
+      cursor: pointer;
+
+      &:hover {
+        color: var(--theme-color);
+      }
+
+      // stylelint-disable selector-max-compound-selectors
+      .num {
+        position: relative;
+        margin-bottom: 0.5rem;
+        font-weight: 600;
+        font-size: 20px;
+      }
+
+      // stylelint-enable selector-max-compound-selectors
+    }
+  }
+}

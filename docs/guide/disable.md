@@ -1,11 +1,11 @@
 ---
 title: 布局与功能禁用
 icon: config
-order: 3
 category:
   - 使用指南
 tag:
   - 禁用
+article: false
 
 navbar: false
 sidebar: false

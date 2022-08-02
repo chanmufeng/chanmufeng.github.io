@@ -2,8 +2,8 @@ import { navbar } from "vuepress-theme-hope";
 
 export default navbar([
   "/",
-  "/home",
-  { text: "使用指南", icon: "creative", link: "/guide/" },
+  // "/home",
+  // { text: "使用指南", icon: "creative", link: "/guide/" },
   {
     text: "技术博文",
     icon: "edit",
@@ -44,8 +44,8 @@ export default navbar([
     ],
   },
   {
-    text: "主题文档",
-    icon: "note",
-    link: "https://vuepress-theme-hope.github.io/v2/zh/",
+    text: "bilibili",
+    icon: "actions",
+    link: "https://space.bilibili.com/519360358",
   },
 ]);
