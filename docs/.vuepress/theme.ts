@@ -2,6 +2,7 @@ import {hopeTheme} from "vuepress-theme-hope";
 import navbar from "./navbar";
 import sidebar from "./sidebar";
 
+
 export default hopeTheme({
     hostname: "https://www.chanmufeng.com",
 
@@ -29,7 +30,7 @@ export default hopeTheme({
     displayFooter: true,
     footer: "<a href='https://beian.miit.gov.cn/'>鲁ICP备20023913号</a>",
 
-    pageInfo: ["Author", "Original", "Date", "Category", "Tag", "ReadingTime","PageView","Word"],
+    pageInfo: ["Author", "Original", "Date", "Category", "Tag", "ReadingTime", "PageView", "Word"],
 
     blog: {
         description: "一个后端开发者",
@@ -124,6 +125,7 @@ export default hopeTheme({
                 plugins: ["highlight", "math", "search", "notes", "zoom"],
             },
         },
+
 
     },
 });

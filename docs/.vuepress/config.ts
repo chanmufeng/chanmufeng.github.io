@@ -1,6 +1,6 @@
 import {defineUserConfig} from "vuepress";
 import theme from "./theme";
-import { path } from "@vuepress/utils";
+import {path} from "@vuepress/utils";
 
 export default defineUserConfig({
     lang: "zh-CN",
@@ -19,4 +19,19 @@ export default defineUserConfig({
             "./components/InfoPanel.ts"
         ),
     },
+
+    head: [
+        [
+            'script', {},
+            `
+                var _hmt = _hmt || [];
+                (function() {
+                  var hm = document.createElement("script");
+                  hm.src = "https://hm.baidu.com/hm.js?dfa689801ccd10bd283b50ea146430f3";
+                  var s = document.getElementsByTagName("script")[0]; 
+                  s.parentNode.insertBefore(hm, s);
+                })();
+            `
+        ]
+    ]
 });
