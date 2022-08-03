@@ -4,6 +4,12 @@ index: false
 icon: creative
 category:
 - MySQL
+# 设置写作时间
+date: 2022-02-05
+# 一个页面可以有多个标签
+tag:
+- MySQL
+- UPDATE
 ---
 > 
 > 文章首发于公众号「蝉沐风」，认真写好每一篇文章，欢迎大家关注交流

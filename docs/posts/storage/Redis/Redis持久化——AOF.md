@@ -4,6 +4,12 @@ index: false
 icon: creative
 category:
 - Redis
+# 设置写作时间
+date: 2021-12-11
+# 一个页面可以有多个标签
+tag:
+- Redis
+- AOF
 ---
 
 上一篇文章给大家介绍了Redis是如何通过RDB的方式进行数据持久化的

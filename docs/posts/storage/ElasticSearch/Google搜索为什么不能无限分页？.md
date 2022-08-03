@@ -3,7 +3,14 @@ title: Google搜索为什么不能无限分页？
 index: false
 icon: creative
 category:
-- MySQL
+- ElasticSearch
+# 设置写作时间
+date: 2022-06-09
+# 一个页面可以有多个标签
+tag:
+- ES
+- 深度分页
+- 高可用
 ---
 
 ![](http://qiniu.chanmufeng.com/2022-06-07-080711.png#alt=image-20220607160711838)

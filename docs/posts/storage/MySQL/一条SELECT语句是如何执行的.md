@@ -4,6 +4,12 @@ index: false
 icon: creative
 category:
 - MySQL
+# 设置写作时间
+date: 2022-01-26
+# 一个页面可以有多个标签
+tag:
+- MySQL
+- SELECT
 ---
 
 MySQL是典型的`C/S架构`（客户端/服务器架构），客户端进程向服务端进程发送一段文本（MySQL指令），服务器进程进行语句处理然后返回执行结果。

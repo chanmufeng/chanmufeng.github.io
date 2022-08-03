@@ -1,4 +1,15 @@
-# JVM到底该学些什么
+---
+title: JVM到底该学些什么
+index: false
+icon: creative
+category:
+- JVM
+# 设置写作时间
+date: 2022-01-04
+# 一个页面可以有多个标签
+tag:
+- JVM
+---
 
 学Java的第一天我们就知道Java是一种跨平台的语言，虽然当时可能是懵懵懂懂，但是「一次编译，到处运行」的特性想必是给众多Javaer留下了不可磨灭的印象。
 

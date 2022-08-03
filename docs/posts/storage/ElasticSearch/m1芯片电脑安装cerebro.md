@@ -4,6 +4,11 @@ index: false
 icon: creative
 category:
 - MySQL
+# 设置写作时间
+date: 2022-07-15
+# 一个页面可以有多个标签
+tag:
+- ES
 ---
 
 `cerebro`是一款`Elasticsearch`集群的监控工具，界面美观又简洁，是学习`Elasticsearch`的好工具。

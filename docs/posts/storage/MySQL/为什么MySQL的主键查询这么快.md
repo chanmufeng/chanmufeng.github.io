@@ -4,6 +4,13 @@ index: false
 icon: creative
 category:
 - MySQL
+# 设置写作时间
+date: 2022-02-25
+# 一个页面可以有多个标签
+tag:
+- MySQL
+- 索引
+- 聚簇索引
 ---
 
 这是图解MySQL的第3篇文章，这篇文章会让大家清楚地明白：

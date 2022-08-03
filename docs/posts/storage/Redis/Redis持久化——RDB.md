@@ -4,6 +4,12 @@ index: false
 icon: creative
 category:
 - Redis
+# 设置写作时间
+date: 2021-11-28
+# 一个页面可以有多个标签
+tag:
+- Redis
+- RDB
 ---
 
 Redis之所以快，一个最重要的原因在于它是直接将数据存储在内存，并直接从内存中读取数据的，因此一个绝对不容忽视的问题便是，一旦Redis服务器宕机，内存中的数据将会完全丢失。

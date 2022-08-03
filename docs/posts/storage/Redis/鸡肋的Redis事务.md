@@ -4,6 +4,12 @@ index: false
 icon: creative
 category:
 - Redis
+# 设置写作时间
+date: 2022-02-16
+# 一个页面可以有多个标签
+tag:
+- Redis
+- 事务
 ---
 
 没错，Redis也有事务管理，但是功能很简单，在正式开发中也并不推荐使用。但是面试中有可能会问到，所以本文简单谈一谈Redis的事务。

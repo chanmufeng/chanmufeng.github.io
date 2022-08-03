@@ -4,6 +4,18 @@ index: false
 icon: creative
 category:
 - MySQL
+# 设置写作时间
+date: 2022-03-26
+# 一个页面可以有多个标签
+tag:
+- MySQL
+- 性能优化
+- 索引
+
+# 此页面会在文章列表置顶
+sticky: true
+# 此页面会出现在文章收藏中
+star: 2
 ---
 
 “不要使用`SELECT *`”几乎已经成为了MySQL使用的一条金科玉律，就连《阿里Java开发手册》也明确表示不得使用`*`作为查询的字段列表，更是让这条规则拥有了权威的加持。

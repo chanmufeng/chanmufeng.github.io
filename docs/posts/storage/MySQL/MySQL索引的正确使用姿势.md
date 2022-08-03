@@ -4,6 +4,13 @@ index: false
 icon: creative
 category:
 - MySQL
+# 设置写作时间
+date: 2022-03-16
+# 一个页面可以有多个标签
+tag:
+- MySQL
+- 索引
+- 性能优化
 ---
 
 这一篇文章来聊一聊如何用好MySQL索引。

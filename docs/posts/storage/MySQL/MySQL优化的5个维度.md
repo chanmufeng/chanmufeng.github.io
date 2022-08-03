@@ -4,6 +4,16 @@ index: false
 icon: creative
 category:
 - MySQL
+# 设置写作时间
+date: 2022-04-05
+# 一个页面可以有多个标签
+tag:
+- MySQL
+- 性能优化
+# 此页面会在文章列表置顶
+sticky: true
+# 此页面会出现在文章收藏中
+star: 4
 ---
 
 面试官如果问你：你会从哪些维度进行MySQL性能优化？你会怎么回答？
