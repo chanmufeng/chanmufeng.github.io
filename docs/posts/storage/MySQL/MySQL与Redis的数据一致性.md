@@ -1,5 +1,5 @@
 ---
-title: MySQL优化的5个维度
+title: 先修改MySQL还是先修改Redis
 index: false
 icon: creative
 category:
@@ -12,8 +12,6 @@ tag:
 - Redis
 - 数据一致性
 ---
-
-> 公众号「蝉沐风」，欢迎大家关注交流
 
 在数据读多写少的情况下作为缓存来使用，恐怕是Redis使用最普遍的场景了。当使用Redis作为缓存的时候，一般流程是这样的。
 
