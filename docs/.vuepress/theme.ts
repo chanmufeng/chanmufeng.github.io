@@ -29,7 +29,7 @@ export default hopeTheme({
     displayFooter: true,
     footer: "<a href='https://beian.miit.gov.cn/'>鲁ICP备20023913号</a>",
 
-    pageInfo: ["Author", "Original", "Date", "Category", "Tag", "ReadingTime"],
+    pageInfo: ["Author", "Original", "Date", "Category", "Tag", "ReadingTime","PageView","Word"],
 
     blog: {
         description: "一个后端开发者",
@@ -124,5 +124,6 @@ export default hopeTheme({
                 plugins: ["highlight", "math", "search", "notes", "zoom"],
             },
         },
+
     },
 });
