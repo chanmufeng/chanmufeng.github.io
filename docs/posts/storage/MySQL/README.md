@@ -20,6 +20,8 @@ category:
 ## 事务与锁
 - [事务的隔离性与MVCC](事务的隔离性与MVCC.md)
 
+## 数据一致性
+- [MySQL与Redis的数据一致性](MySQL与Redis的数据一致性.md)
 
 ## MySQL优化
 - [MySQL优化的5个维度](MySQL优化的5个维度.md)

@@ -65,6 +65,13 @@ export default sidebar({
                 ]
             },
             {
+                text: "数据一致性",
+                icon: "lock",
+                children: [
+                    "MySQL与Redis的数据一致性",
+                ]
+            },
+            {
                 text: "优化",
                 icon: "cycle",
                 children: [
