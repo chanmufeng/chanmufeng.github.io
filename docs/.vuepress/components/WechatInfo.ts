@@ -54,7 +54,7 @@ export default defineComponent({
                                 class: [
                                     "wechat-img",
                                 ],
-                                src: withBase("wechat.jpg"),
+                                src: withBase("wechat.png"),
                                 property: "image",
                                 alt: "Wechat Img",
                             })
