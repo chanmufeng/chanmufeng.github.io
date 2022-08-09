@@ -15,11 +15,12 @@ tag:
 Redis之所以快，一个最重要的原因在于它是直接将数据存储在内存，并直接从内存中读取数据的，因此一个绝对不容忽视的问题便是，一旦Redis服务器宕机，内存中的数据将会完全丢失。
 
 好在Redis官方为我们提供了两种持久化的机制，RDB和AOF，今天我们来聊一下RDB。
-![image.png](https://cdn.nlark.com/yuque/0/2021/png/8387282/1637494078512-0574d33a-0301-43e6-b5e1-c469513a5506.png#clientId=u1dde70d1-d7f4-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=353&id=MeCAN&margin=%5Bobject%20Object%5D&name=image.png&originHeight=706&originWidth=2484&originalType=binary&ratio=1&rotation=0&showTitle=false&size=920263&status=done&style=none&taskId=u523763d9-d9ad-47f2-9a2d-72c780b528e&title=&width=1242)
+![image.png](https://cdn.nlark.com/yuque/0/2021/png/8387282/1637494078512-0574d33a-0301-43e6-b5e1-c469513a5506.png)
 
 ## 什么是RDB
 RDB是Redis的一种数据持久化到磁盘的策略，是一种以内存快照形式保存Redis数据的方式。所谓快照，就是把**某一时刻的状态**以文件的形式进行**全量备份**到磁盘，这个快照文件就称为RDB文件，其中RDB是Redis DataBase的缩写。
-![image.png](https://cdn.nlark.com/yuque/0/2021/png/8387282/1637907145514-f0dd6c1f-6132-4ff7-8e80-4fae241108c4.png#clientId=ub0fd0cd1-3b73-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=318&id=u1513a1f0&margin=%5Bobject%20Object%5D&name=image.png&originHeight=318&originWidth=1198&originalType=binary&ratio=1&rotation=0&showTitle=false&size=32140&status=done&style=none&taskId=uadd6b542-1933-4324-9d02-b546f01be85&title=&width=1198)
+![image.png](https://cdn.nlark.com/yuque/0/2021/png/8387282/1637907145514-f0dd6c1f-6132-4ff7-8e80-4fae241108c4.png)
+
 ## 全量备份带来的思考
 ### 备份会不会阻塞主线程
 我们知道Redis为所有客户端处理数据时使用的是单线程，这个模型就决定了使用者需要尽量避免进行会阻塞主线程的操作。那么Redis在生成RDB文件的时候，会不会阻塞主线程呢？
@@ -37,8 +38,9 @@ OK
 127.0.0.1:6379> BGSAVE
 Background saving started
 ```
-![image.png](https://cdn.nlark.com/yuque/0/2021/png/8387282/1637816189975-ffc92099-2436-4de1-bd1f-78393df59618.png#clientId=ub0fd0cd1-3b73-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=364&id=u8ee040e6&margin=%5Bobject%20Object%5D&name=image.png&originHeight=364&originWidth=631&originalType=binary&ratio=1&rotation=0&showTitle=false&size=29335&status=done&style=shadow&taskId=u581a456e-2cab-405d-9473-304e7a6d999&title=&width=631)
+![image.png](https://cdn.nlark.com/yuque/0/2021/png/8387282/1637816189975-ffc92099-2436-4de1-bd1f-78393df59618.png)
 RDB文件实际是由`rdb.c/rdbSave`函数进行创建的，`SAVE`命令和`BGSAVE`命令会以不同的方式调用这个函数，下面是两个命令的伪代码
+
 ```c
 void SAVE(){
     # 创建RDB文件
@@ -74,12 +76,12 @@ void BGSAVE(){
 
 为什么要执着于某一时刻的数据，一段时间内的数据不行吗？还真就不行！因为一个时刻的数据反映了系统的该时刻的状态。
 例如在`t1`时刻，Redis保存的数据状态为
-![image.png](https://cdn.nlark.com/yuque/0/2021/png/8387282/1637822188793-070aab0b-da9b-48c5-8678-02f97daf2185.png#clientId=ub0fd0cd1-3b73-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=102&id=ufcf46b8b&margin=%5Bobject%20Object%5D&name=image.png&originHeight=102&originWidth=974&originalType=binary&ratio=1&rotation=0&showTitle=false&size=12726&status=done&style=none&taskId=u602f069b-8fdb-4add-af80-dba3853600d&title=&width=974)
+![image.png](https://cdn.nlark.com/yuque/0/2021/png/8387282/1637822188793-070aab0b-da9b-48c5-8678-02f97daf2185.png)
 `t2`时刻，Redis时刻的状态为
-![image.png](https://cdn.nlark.com/yuque/0/2021/png/8387282/1637822208265-f6899670-a60b-40ae-bc4e-65a3f06c5679.png#clientId=ub0fd0cd1-3b73-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=104&id=u48a6ce48&margin=%5Bobject%20Object%5D&name=image.png&originHeight=104&originWidth=980&originalType=binary&ratio=1&rotation=0&showTitle=false&size=12771&status=done&style=none&taskId=u3b5b44ab-4bef-44e8-ad6d-02285f1d2e4&title=&width=980)
+![image.png](https://cdn.nlark.com/yuque/0/2021/png/8387282/1637822208265-f6899670-a60b-40ae-bc4e-65a3f06c5679.png)
 如果Redis保存的是一段时间内的全量数据，则在这一段时间内，数据有如下几种可能
-![image.png](https://cdn.nlark.com/yuque/0/2021/png/8387282/1637823685601-5f242c04-84f0-498b-b56a-5abe50bf7f86.png#clientId=ub0fd0cd1-3b73-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=518&id=ud633e37b&margin=%5Bobject%20Object%5D&name=image.png&originHeight=518&originWidth=1142&originalType=binary&ratio=1&rotation=0&showTitle=false&size=57132&status=done&style=none&taskId=u0f93a199-fba6-4e81-8349-7cb9fdb0350&title=&width=1142)
-只有第一条能完美表征t1时刻的系统状态，Redis进行数据恢复时至少能恢复到`t1`时刻的状态，`t1`时刻之后的数据可通过其他方式（如之后会介绍到的持久化的另一种方式`AOF`）进行补充，而其余3种数据对数据恢复没有任何实际意义。
+![image.png](https://cdn.nlark.com/yuque/0/2021/png/8387282/1637823685601-5f242c04-84f0-498b-b56a-5abe50bf7f86.png)
+只有第一条能完美表征t1时刻的系统状态，Redis进行数据恢复时至少能恢复到`t1`时刻的状态，`t1`时刻之后的数据可通过其他方式（如之后会介绍到的持久化的另一种方式`AOF`)进行补充，而其余3种数据对数据恢复没有任何实际意义。
 
 ### 备份过程中，数据能否修改
 为了实现备份某一时刻数据的这个目的，如果是我们来设计Redis，我们会怎么做呢？
@@ -108,7 +110,8 @@ void BGSAVE(){
 Redis主进程`fork`生成的子进程可以共享主进程的所有内存数据，`fork`并不会带来明显的性能开销，因为不会立刻对内存进行拷贝，它会将拷贝内存的动作推迟到真正需要的时候。
 
 想象一下，如果主进程是读取内存数据，那么和`BGSAVE`子进程并不冲突。如果主进程要修改Redis内存中某个数据（图中数据C），那么操作系统内核会将被修改的内存数据复制一份（复制的是修改之前的数据），未被修改的内存数据依然被父子两个进程共享，被主进程修改的内存空间归属于主进程，被复制出来的原始数据归属于子进程。如此一来，主进程就可以在快照发生的过程中肆无忌惮地接受数据写入的请求，子进程也仍然能够对某一时刻的内容做快照。
-![image.png](https://cdn.nlark.com/yuque/0/2021/png/8387282/1638017965069-0bfda453-6cbc-4a2c-b424-217ce9b9b2a0.png#clientId=u19912f5c-bf11-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=794&id=u30ebaa42&margin=%5Bobject%20Object%5D&name=image.png&originHeight=794&originWidth=1598&originalType=binary&ratio=1&rotation=0&showTitle=false&size=85963&status=done&style=none&taskId=u406abcff-2245-493c-9cf3-93c2759bfb8&title=&width=1598)
+![image.png](https://cdn.nlark.com/yuque/0/2021/png/8387282/1638017965069-0bfda453-6cbc-4a2c-b424-217ce9b9b2a0.png)
+
 > 注：写时复制是建立在短时间内写请求不多的假设之下，如果写请求的量非常巨大，那么内存复制的压力自然也不会小。
 
 ## 间隔自动备份
@@ -163,7 +166,8 @@ struct saveparam{
 }
 ```
 以默认配置为例，Redis中`saveparams`存储的数据结构将会如下所示
-![image.png](https://cdn.nlark.com/yuque/0/2021/png/8387282/1638021410138-15ba4fa6-7e2c-473a-b4b9-cb0084f1ac94.png#clientId=u19912f5c-bf11-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=466&id=uef30f354&margin=%5Bobject%20Object%5D&name=image.png&originHeight=466&originWidth=1192&originalType=binary&ratio=1&rotation=0&showTitle=false&size=54015&status=done&style=none&taskId=ua90a3bdd-e791-4565-a19b-c2d1dc384d0&title=&width=1192)
+![image.png](https://cdn.nlark.com/yuque/0/2021/png/8387282/1638021410138-15ba4fa6-7e2c-473a-b4b9-cb0084f1ac94.png)
+
 #### dirty计数器和lastsave属性
 除了`saveparams`参数之外，`redisServer`还有`dirty`和`lastsave`属性
 ```c
@@ -191,8 +195,9 @@ Redis每进行一次写命令都会对`dirty`计数器进行更新，批量操�
 redis> SADD fruits apple banana orange
 ```
 `dirty`计数器将会增加3
-![image.png](https://cdn.nlark.com/yuque/0/2021/png/8387282/1638024082403-a844c7db-d308-4f31-8db9-8d9df7093b10.png#clientId=u19912f5c-bf11-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=454&id=uc5f3abd7&margin=%5Bobject%20Object%5D&name=image.png&originHeight=454&originWidth=356&originalType=binary&ratio=1&rotation=0&showTitle=false&size=25861&status=done&style=none&taskId=uf0cd4914-8f11-4f58-a5bf-76cc28daa6e&title=&width=356)
-如上图所示，`dirty`计数器的值为101，标识Redis自上次成功进行RDB快照之后，对数据库一共进行了101次修改操作；`lastsave`属性记录了上次成功进行RDB快照的时间1638023962（2021-11-27 22:39:22）
+![image.png](https://cdn.nlark.com/yuque/0/2021/png/8387282/1638024082403-a844c7db-d308-4f31-8db9-8d9df7093b10.png)
+如上图所示，`dirty`计数器的值为101，标识Redis自上次成功进行RDB快照之后，对数据库一共进行了101次修改操作；`lastsave`属性记录了上次成功进行RDB快照的时间1638023962（2021-11-27 22:39:22)
+
 #### 周期性检查保存条件
 `serverCron`函数默认每隔100毫秒就会执行一次，该函数的其中一个作用就是检查`save`命令设置的保存条件是否被满足，是则执行`BGSAVE`命令。伪代码如下
 ```c
@@ -214,11 +219,11 @@ void serverCron(){
 }
 ```
 再举个例子，假设Redis的当前状态如下图
-![image.png](https://cdn.nlark.com/yuque/0/2021/png/8387282/1638024996313-38009a12-0b23-4d5d-8f68-ebe479acd607.png#clientId=u19912f5c-bf11-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=660&id=u60eb01ae&margin=%5Bobject%20Object%5D&name=image.png&originHeight=660&originWidth=1230&originalType=binary&ratio=1&rotation=0&showTitle=false&size=69649&status=done&style=none&taskId=ufe6f8327-f23a-4cc8-ac51-84f31480986&title=&width=1230)
-那么当时间来到1638024263（1638023962之后的第301秒），由于满足了`saveparams`数组的第2个保存条件——300S之内至少进行10次修改，Redis将会执行一次`BGSAVE`操作。
+![image.png](https://cdn.nlark.com/yuque/0/2021/png/8387282/1638024996313-38009a12-0b23-4d5d-8f68-ebe479acd607.png)
+那么当时间来到1638024263（1638023962之后的第301秒)，由于满足了`saveparams`数组的第2个保存条件——300S之内至少进行10次修改，Redis将会执行一次`BGSAVE`操作。
 
 假设`BGSAVE`执行4S之后完成，则此时Redis的状态将会更新为
-![image.png](https://cdn.nlark.com/yuque/0/2021/png/8387282/1638025250592-66ce681e-5376-4719-9cc8-e815cd2a660d.png#clientId=u19912f5c-bf11-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=598&id=u03f87105&margin=%5Bobject%20Object%5D&name=image.png&originHeight=598&originWidth=1220&originalType=binary&ratio=1&rotation=0&showTitle=false&size=67092&status=done&style=none&taskId=uec786f3c-844b-444c-9a24-5dbe6372235&title=&width=1220)
+![image.png](https://cdn.nlark.com/yuque/0/2021/png/8387282/1638025250592-66ce681e-5376-4719-9cc8-e815cd2a660d.png)
 
 
 
