@@ -45,7 +45,7 @@ public User getUserInfo(String userName) {
 }
 ```
 
-## 一致性问题
+## 1. 一致性问题
 
 但是，在Redis的key值未过期的情况下，用户修改了个人信息，我们此时既要操作数据库数据，也要操作Redis数据。现在我们面临了两种选择：
 
@@ -58,9 +58,9 @@ public User getUserInfo(String userName) {
 
 下面我们来讨论一下关于Redis和数据库之间数据一致性的一些方案。
 
-## 方案选择
+## 2. 方案选择
 
-### 是删除缓存还是更新缓存？
+### 2.1. 是删除缓存还是更新缓存？
 
 当数据库数据发生变化的时候，Redis的数据也需要进行相应的操作，那么这个「操作」到底是用「更新」还是用「删除」呢？
 
@@ -90,7 +90,7 @@ public User getUserInfo(String userName) {
 -   先更新数据库，再删除缓存
 -   先删除缓存，再更新数据库
 
-### 先更新数据库，再删除缓存
+### 2.2. 先更新数据库，再删除缓存
 
 这种方式可能存在以下两种异常情况
 
@@ -99,7 +99,7 @@ public User getUserInfo(String userName) {
 
 第2种情况应该怎么办呢？我们有两种方式：**失败重试**和**异步更新**。
 
-#### 失败重试
+#### 2.2.1. 失败重试
 
 如果删除缓存失败，我们可以捕获这个异常，把需要删除的 key 发送到消息队列。自己创建一个消费者消费，尝试再次删除这个 key，直到删除成功为止。
 
@@ -108,7 +108,7 @@ public User getUserInfo(String userName) {
 
 这种方式有个缺点，首先会对业务代码造成入侵，其次引入了消息队列，增加了系统的不确定性。
 
-#### 异步更新缓存
+#### 2.2.2. 异步更新缓存
 
 因为更新数据库时会往 binlog 中写入日志，所以我们可以启动一个监听 binlog变化的服务（比如使用阿里的 canal开源组件），然后在客户端完成删除 key 的操作。如果删除失败的话，再发送到消息队列。
 
@@ -116,7 +116,7 @@ public User getUserInfo(String userName) {
 
 总之，对于删除缓存失败的情况，我们的做法是不断地重试删除操作，直到成功。无论是重试还是异步删除，都是最终一致性的思想。
 
-### 先删除缓存，再更新数据库
+### 2.3. 先删除缓存，再更新数据库
 
 这种方式可能存在以下两种异常情况
 
@@ -159,7 +159,7 @@ public void update(String key, Object data) {
 
 ***
 
-## 推荐阅读
+## 3. 推荐阅读
 
 -   [就这？Redis持久化策略——RDB](https://mp.weixin.qq.com/s?__biz=MzI1MDU0MTc2MQ==&mid=2247483952&idx=1&sn=e9982700a75eae5c2471dcfa459ae3e3&chksm=e981e19edef66888f2da69ce26c164682b552f5ffd838ff027a85f7e1e1f156640c6d55ab6ae#rd)
 -   [就这？Redis持久化策略——AOF](https://mp.weixin.qq.com/s?__biz=MzI1MDU0MTc2MQ==&mid=2247483972&idx=1&sn=3194ed597d62420a1c54bef082ddd3aa&chksm=e981e1eadef668fc8230913dea198d44a54eba1b97a528739e282d471841588e83ceee7116f8#rd)
