@@ -233,7 +233,8 @@ MySQL 从你输入的`SELECT`这个关键字识别出来，这是一个查询语
 解析器会根据SQL语句生成一个数据结构，这个数据结构我们成为解析树。
 ​
 
-![image.png](https://cdn.nlark.com/yuque/0/2022/png/8387282/1643173208456-a4ea4055-ac98-4ab4-989e-b59ec46279f9.png)
+![image.png](http://qiniu.chanmufeng.com/2022-08-18-042849.png)
+
 我故意拼错了`SELECT`关键字，MySQL报了语法错误，就是在语法分析这一步。
 
 ```sql
@@ -377,6 +378,7 @@ ALTER TABLE 表名 ENGINE = 存储引擎名称;
 ### 3.4 存储引擎底层区别
 下面我们分别创建3张设置了不同存储引擎的表，**t_user_innodb**、**t_user_myisam**、**t_user_memory**
 ![image](https://qiniu.chanmufeng.com/2022-01-26-133331.png)
+
 我们看一下不同存储引擎在底层存储方面的差异，首先找到MySQL的数据存储目录
 
 ```sql
@@ -388,6 +390,7 @@ mysql> show variables like 'datadir';
 +---------------+-----------------+
 ```
 进入到目标目录之后，找到当前数据库对应的目录（MySQL会为一个数据库创建一个同名的目录），数据库中表的存储结构如下
+
 ![image (1)](https://qiniu.chanmufeng.com/2022-01-26-133438.png)
 不同的存储引擎存放数据的方式不一样，产生的文件数量和格式也不一样，InnoDB文件包含2个，MEMORY文件包含1个，MYISAM文件包含3个。
 
