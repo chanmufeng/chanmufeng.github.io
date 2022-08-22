@@ -15,7 +15,7 @@ export default hopeTheme({
 
     logo: "https://img-blog.csdnimg.cn/d16e11af2edb4972833f88083d2f0375.png",
 
-    // repo: "vuepress-theme-hope/vuepress-theme-hope",
+    repo: "chanmufeng/chanmufeng.github.io",
 
     docsDir: "demo/src",
 
