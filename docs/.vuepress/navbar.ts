@@ -44,6 +44,11 @@ export default navbar([
     ],
   },
   {
+    text: "最近更新",
+    icon: "interact",
+    link: "/update.md",
+  },
+  {
     text: "bilibili",
     icon: "actions",
     link: "https://space.bilibili.com/519360358",

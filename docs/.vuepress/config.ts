@@ -1,4 +1,5 @@
 import {defineUserConfig} from "vuepress";
+import {docsearchPlugin} from "@vuepress/plugin-docsearch";
 import theme from "./theme";
 import {path} from "@vuepress/utils";
 
@@ -20,6 +21,7 @@ export default defineUserConfig({
         ),
     },
 
+    //配置百度统计
     head: [
         [
             'script', {},
@@ -33,5 +35,14 @@ export default defineUserConfig({
                 })();
             `
         ]
-    ]
+    ],
+
+    // 配置 Algolia DocSearch
+    plugins: [
+        docsearchPlugin({
+            appId: "8U6XWIU6A0",
+            apiKey: "60e841bc063d8d7514271059f88d4e60",
+            indexName: "chanmufeng"
+        }),
+    ],
 });
