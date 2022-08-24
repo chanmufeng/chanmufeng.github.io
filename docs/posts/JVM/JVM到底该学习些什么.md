@@ -1,7 +1,6 @@
 ---
 title: JVM到底该学些什么
 index: false
-icon: creative
 category:
 - JVM
 # 设置写作时间

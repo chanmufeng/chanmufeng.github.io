@@ -41,6 +41,7 @@ export default navbar([
         ],
       },
       { text: "并发篇", icon: "edit", link: "/concurrency" },
+      { text: "JVM", icon: "back-stage", link: "/JVM" },
     ],
   },
   {
