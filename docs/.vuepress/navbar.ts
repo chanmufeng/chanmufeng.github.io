@@ -47,7 +47,7 @@ export default navbar([
   {
     text: "开发工具",
     icon: "keyboard",
-    prefix: "/tools",
+    prefix: "/posts/tools",
     children: [
       { text: "IDEA", icon: "jetbrains", link: "/IDEA" },
     ],
