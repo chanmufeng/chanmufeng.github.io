@@ -6,7 +6,7 @@ export default navbar([
   // { text: "使用指南", icon: "creative", link: "/guide/" },
   {
     text: "技术博文",
-    icon: "edit",
+    icon: "xieboke",
     prefix: "/posts",
     children: [
       {
@@ -14,8 +14,8 @@ export default navbar([
         icon: "edit",
         prefix: "/basic",
         children: [
-          { text: "设计模式", icon: "edit", link: "/design-pattern/" },
-          { text: "设计原则", icon: "edit", link: "/design-principle/开闭原则" },
+          { text: "设计模式", icon: "design", link: "/design-pattern/" },
+          { text: "设计原则", icon: "design", link: "/design-principle/开闭原则" },
         ],
       },
       {
@@ -30,28 +30,40 @@ export default navbar([
           },
           {
             text: "Redis",
-            icon: "workingDirectory",
+            icon: "redis",
             link: "/Redis",
           },
           {
             text: "ElasticSearch",
-            icon: "edit",
+            icon: "elasticsearch-Elasticsearch",
             link: "/ElasticSearch",
           },
         ],
       },
-      { text: "并发篇", icon: "edit", link: "/concurrency" },
-      { text: "JVM", icon: "back-stage", link: "/JVM" },
+      { text: "并发篇", icon: "CPU", link: "/concurrency" },
+      { text: "JVM", icon: "PCxuniji", link: "/JVM" },
+    ],
+  },
+  {
+    text: "开发工具",
+    icon: "keyboard",
+    prefix: "/tools",
+    children: [
+      { text: "IDEA", icon: "jetbrains", link: "/IDEA" },
     ],
   },
   {
     text: "最近更新",
-    icon: "interact",
+    icon: "Update",
     link: "/update.md",
   },
   {
-    text: "bilibili",
-    icon: "actions",
+    text: "",
+    icon: "bilibili",
     link: "https://space.bilibili.com/519360358",
   },
 ]);
+
+
+27
+28
