@@ -40,7 +40,7 @@ export default sidebar({
         // MySQL
         "/posts/storage/MySQL": [
             {
-                text: "基础篇",
+                text: "1. 基础篇",
                 icon: "strong",
                 children: [
                     "一条SELECT语句是如何执行的",
@@ -48,7 +48,7 @@ export default sidebar({
                 ]
             },
             {
-                text: "索引篇",
+                text: "2. 索引篇",
                 icon: "condition",
                 children: [
                     "为什么MySQL的主键查询这么快",
@@ -58,21 +58,21 @@ export default sidebar({
                 ]
             },
             {
-                text: "事务与锁",
+                text: "3. 事务与锁",
                 icon: "lock",
                 children: [
                     "事务的隔离性与MVCC",
                 ]
             },
             {
-                text: "数据一致性",
+                text: "4. 数据一致性",
                 icon: "lock",
                 children: [
                     "MySQL与Redis的数据一致性",
                 ]
             },
             {
-                text: "优化",
+                text: "5. 优化",
                 icon: "cycle",
                 children: [
                     "MySQL优化的5个维度",
@@ -83,7 +83,7 @@ export default sidebar({
         // Redis
         "/posts/storage/Redis": [
             {
-                text: "持久化",
+                text: "1. 持久化",
                 icon: "strong",
                 children: [
                     "Redis持久化——AOF",
@@ -91,7 +91,7 @@ export default sidebar({
                 ]
             },
             {
-                text: "事务",
+                text: "2. 事务",
                 icon: "condition",
                 children: [
                     "鸡肋的Redis事务",
@@ -109,8 +109,18 @@ export default sidebar({
 
         // 并发
         "/posts/concurrency": [
-            "用「闪电侠」解释一下进程和线程",
-            "缓存一致性与内存屏障",
+            {
+                text: "0. 趣谈",
+                children: [
+                    "用「闪电侠」解释一下进程和线程.md",
+                ]
+            },
+            {
+                text: "1. 硬件篇",
+                children: [
+                    "缓存一致性与内存屏障",
+                ]
+            },
 
         ]
 
