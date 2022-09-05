@@ -118,6 +118,7 @@ export default sidebar({
             {
                 text: "1. 硬件篇",
                 children: [
+                    "CPU流水线与指令重排序",
                     "缓存一致性与内存屏障",
                 ]
             },
