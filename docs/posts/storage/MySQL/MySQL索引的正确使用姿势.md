@@ -135,7 +135,9 @@ SELECT * FROM user_innodb WHERE name = "蝉沐风" AND phone LIKE "%6606";
 
 ![Server层返回过滤数据](http://qiniu.chanmufeng.com/2022-03-14-082930.png?imageView2/0/q/75|watermark/2/text/5YWs5LyX5Y-344CM6J2J5rKQ6aOO44CN/font/5b6u6L2v6ZuF6buR/fontsize/320/fill/IzAwMDAwMA==/dissolve/70/gravity/SouthEast/dx/10/dy/20)
 
-值得我们关注的是，索引的使用是在存储引擎中进行的，而数据记录的比较是在Server层中进行的。现在我们把上述搜索考虑地极端一点，假如数据表中10万条记录都符合`name='蝉沐风'`的条件，而只有1条符合`phone LIKE "%6606"`条件，这就意味着，InnoDB需要将99999条无效的记录传输给Server层让其自己筛选，更严重的是，这99999条数据都是通过回表搜索出来的啊！关于回表的代价你已经知道了。
+**值得我们关注的是，索引的使用是在存储引擎中进行的，而数据记录的比较是在Server层中进行的。**
+
+现在我们把上述搜索考虑地极端一点，假如数据表中10万条记录都符合`name='蝉沐风'`的条件，而只有1条符合`phone LIKE "%6606"`条件，这就意味着，InnoDB需要将99999条无效的记录传输给Server层让其自己筛选，更严重的是，这99999条数据都是通过回表搜索出来的啊！关于回表的代价你已经知道了。
 
 现在引入**索引下推**。准确来说，应该叫做**索引条件下推**（Index Condition Pushdown，**ICP**），就是过滤的动作由下层的存储引擎层通过使用索引来完成，而不需要上推到Server层进行处理。ICP是在MySQL5.6之后完善的功能。
 

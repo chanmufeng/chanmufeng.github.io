@@ -42,6 +42,7 @@ export default navbar([
       },
       { text: "并发篇", icon: "CPU", link: "/concurrency" },
       { text: "JVM", icon: "PCxuniji", link: "/JVM" },
+      { text: "Linux", icon: "linux", link: "/os" },
     ],
   },
   {
