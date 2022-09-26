@@ -54,6 +54,11 @@ export default navbar([
     ],
   },
   {
+    text: "socket编程",
+    icon: "wangluojiekou",
+    link: "/posts/network-programming",
+  },
+  {
     text: "最近更新",
     icon: "Update",
     link: "/update.md",
