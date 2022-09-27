@@ -1,6 +1,7 @@
 ---
 title: Linux
 index: false
+article: false
 category:
   - linux
 ---

@@ -2,6 +2,7 @@
 title: CPU流水线与指令重排序
 index: false
 icon: creative
+description: "从CPU的角度理解指令重排序"
 category:
 - 并发
 # 设置写作时间
