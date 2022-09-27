@@ -1,6 +1,7 @@
 ---
 title: 简明JVM教程
 index: false
+article: false
 category:
   - JVM
 ---

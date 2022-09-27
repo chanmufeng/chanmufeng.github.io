@@ -2,6 +2,7 @@
 title: 最近更新
 index: false
 pageInfo: false
+article: false
 ---
 
 ## 2022年9月

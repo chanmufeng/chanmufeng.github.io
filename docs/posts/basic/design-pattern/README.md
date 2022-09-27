@@ -2,6 +2,7 @@
 title: 用故事讲设计模式
 index: false
 icon: creative
+article: false
 category:
   - 设计模式
 ---

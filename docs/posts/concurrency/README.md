@@ -2,6 +2,7 @@
 title: Java高并发编程
 index: false
 icon: creative
+article: false
 category:
   - 并发
   - 多线程
