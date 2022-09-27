@@ -1,5 +1,5 @@
 ---
-title: 高效IDEA
+title: 高效VSCode
 index: false
 icon: creative
 article: false
@@ -9,5 +9,5 @@ category:
 
 ## 目录
 
-- [自己写插件](从0到1编写一款插件.md)
+- [VSCode的官方配置同步方案](如何同步配置.md)
 

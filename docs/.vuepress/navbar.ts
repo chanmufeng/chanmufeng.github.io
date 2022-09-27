@@ -51,6 +51,7 @@ export default navbar([
     prefix: "/posts/tools",
     children: [
       { text: "IDEA", icon: "jetbrains", link: "/IDEA" },
+      { text: "VSCode", icon: "VsCode", link: "/VSCode" },
     ],
   },
   {
