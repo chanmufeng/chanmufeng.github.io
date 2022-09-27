@@ -5,6 +5,7 @@ pageInfo: false
 ---
 
 ## 2022年9月
+- 添加《[Socket编程简明教程](/posts/network-programming)》目录——2022.09.27
 - 添加文章《[什么是文件描述符](/posts/os/什么是文件描述符.md)》——2022.09.25
 - 添加文章《[CPU流水线与指令重排序](/posts/concurrency/CPU流水线与指令重排序.md)》——2022.09.04
 
