@@ -123,6 +123,27 @@ export default sidebar({
                 ]
             },
 
+        ],
+
+        // 并发
+        "/posts/network-programming": [
+            {
+                text: "什么是socket",
+                // 可选的, 分组标题对应的链接
+                link: "什么是socket.md",
+                children: [
+                    // "两种socket",
+                    // "漫谈网络",
+                ]
+            },
+            // {
+            //     text: "IP地址、struct以及地址转换",
+            //     children: [
+            //         "CPU流水线与指令重排序",
+            //         "缓存一致性与内存屏障",
+            //     ]
+            // },
+
         ]
 
     }

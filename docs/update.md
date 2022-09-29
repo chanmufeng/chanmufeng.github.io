@@ -6,6 +6,7 @@ article: false
 ---
 
 ## 2022年9月
+- 添加《[什么是socket](/posts/network-programming/什么是socket.md)》翻译——2022.09.29
 - 添加《[VSCode官方配置同步方案](/posts/tools/VSCode/如何同步配置.md)》——2022.09.27
 - 添加《[Socket编程简明教程](/posts/network-programming)》目录——2022.09.27
 - 添加文章《[什么是文件描述符](/posts/os/什么是文件描述符.md)》——2022.09.25
