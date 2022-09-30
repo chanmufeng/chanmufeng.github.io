@@ -5,6 +5,7 @@ category:
 - socket
 # 设置写作时间
 date: 2022-09-30
+description: "啥？只有两种`Internet Socket`吗？开玩笑的啦，当然远不止两种喽。但是为了怕吓到你，这里主要介绍`Stream Sockets`以及`Datagram Sockets`。"
 # 一个页面可以有多个标签
 tag:
 - socket编程
