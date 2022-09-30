@@ -132,7 +132,7 @@ export default sidebar({
                 // 可选的, 分组标题对应的链接
                 link: "什么是socket.md",
                 children: [
-                    // "两种socket",
+                    "两种Internet-Socket.md",
                     // "漫谈网络",
                 ]
             },

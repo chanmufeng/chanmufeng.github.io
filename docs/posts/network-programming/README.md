@@ -19,7 +19,7 @@ article: false
   - 镜像站点
   - 版权说明
 - [什么是socket](什么是socket.md)
-  - 两种Socket
+  - [两种Internet Socket](两种Internet-Socket.md)
   - 漫谈网络
 - IP地址、struct以及地址转换
   - IP地址，IPv4和IPv6
