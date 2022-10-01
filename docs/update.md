@@ -5,6 +5,9 @@ pageInfo: false
 article: false
 ---
 
+## 2022年10月
+- 添加《[漫谈网络](/posts/network-programming/漫谈网络.md)》翻译——2022.10.01
+- 
 ## 2022年9月
 - 添加《[两种Internet Socket](/posts/network-programming/两种Internet-socket.md)》翻译——2022.09.30
 - 添加《[什么是socket](/posts/network-programming/什么是socket.md)》翻译——2022.09.29
