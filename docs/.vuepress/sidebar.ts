@@ -136,14 +136,21 @@ export default sidebar({
                     "漫谈网络",
                 ]
             },
-            // {
-            //     text: "IP地址、struct以及地址转换",
-            //     children: [
-            //         "CPU流水线与指令重排序",
-            //         "缓存一致性与内存屏障",
-            //     ]
-            // },
+            {
+                text: "IP地址、struct以及地址转换",
+                link: "IP.md",
+                children: [
+                    "IPv4-IPv6",
+                    "字节序",
+                    "socket相关的struct",
+                    "再谈IP地址",
+                ]
+            },
+            {
+                text: "从IPv4迁移到IPv6",
+                link: "从IPv4迁移到IPv6.md",
 
+            },
         ]
 
     }
