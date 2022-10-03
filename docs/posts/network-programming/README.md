@@ -27,11 +27,7 @@ article: false
   - struct结构
   - 再谈IP地址
 - 从IPv4迁移到IPv6
-  - IP地址，IPv4和IPv6
-  - 字节序
-  - struct结构
-  - 再谈IP地址
-- System call 或 Bust
+- 各种System call
   - getaddrinfo()—准备开始！
   - socket()—拿到文件描述符！
   - bind()—我在监听哪个端口?
