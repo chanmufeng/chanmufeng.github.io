@@ -6,7 +6,8 @@ article: false
 ---
 
 ## 2022年10月
-- 添加《[IPv4与IPv6](/posts/network-programming/IPv4-IPv6.md)》翻译——2022.10.03
+- 添加《[字节序](/posts/network-programming/字节序.md)》文章——2022.10.05
+- 添加《[IPv4与IPv6](/posts/network-programming/IPv4-IPv6.md)》文章——2022.10.03
 - 添加《[漫谈网络](/posts/network-programming/漫谈网络.md)》翻译——2022.10.01
 
 ## 2022年9月
