@@ -142,15 +142,15 @@ export default sidebar({
                 children: [
                     "IPv4-IPv6",
                     "字节序",
-                    "socket相关的struct",
-                    "再谈IP地址",
+                    // "socket相关的struct",
+                    // "再谈IP地址",
                 ]
             },
-            {
-                text: "从IPv4迁移到IPv6",
-                link: "从IPv4迁移到IPv6.md",
-
-            },
+            // {
+            //     text: "从IPv4迁移到IPv6",
+            //     link: "从IPv4迁移到IPv6.md",
+            //
+            // },
         ]
 
     }

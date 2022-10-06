@@ -23,7 +23,7 @@ article: false
   - [漫谈网络](漫谈网络.md)
 - [IP地址、struct以及地址转换](IP.md)
   - [IP地址，IPv4和IPv6](IPv4-IPv6.md)
-  - 字节序
+  - [字节序](字节序.md)
   - struct结构
   - 再谈IP地址
 - 从IPv4迁移到IPv6
