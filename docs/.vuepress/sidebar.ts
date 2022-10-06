@@ -142,7 +142,7 @@ export default sidebar({
                 children: [
                     "IPv4-IPv6",
                     "字节序",
-                    // "socket相关的struct",
+                    "6种socket数据结构",
                     // "再谈IP地址",
                 ]
             },
