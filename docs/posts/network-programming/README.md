@@ -25,7 +25,7 @@ article: false
   - [IP地址，IPv4和IPv6](IPv4-IPv6.md)
   - [字节序](字节序.md)
   - [socket相关的数据结构](6种socket数据结构.md)
-  - 再谈IP地址
+  - [IP与二进制转换](IP与二进制转换.md)
 - 从IPv4迁移到IPv6
 - 各种System call
   - getaddrinfo()—准备开始！
