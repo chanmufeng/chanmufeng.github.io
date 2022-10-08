@@ -7,6 +7,7 @@ article: false
 
 ## 2022年10月
 
+- 添加《[从IPv4迁移到IPv6](/posts/network-programming/从IPv4迁移到IPv6.md)》文章——2022.10.08
 - 添加《[IP与二进制转换](/posts/network-programming/IP与二进制转换.md)》文章——2022.10.07
 - 添加《[6种socket数据结构](/posts/network-programming/6种socket数据结构.md)》文章——2022.10.06
 - 添加《[字节序](/posts/network-programming/字节序.md)》文章——2022.10.05

@@ -146,11 +146,10 @@ export default sidebar({
                     "IP与二进制转换",
                 ]
             },
-            // {
-            //     text: "从IPv4迁移到IPv6",
-            //     link: "从IPv4迁移到IPv6.md",
-            //
-            // },
+            {
+                text: "从IPv4迁移到IPv6",
+                link: "从IPv4迁移到IPv6.md",
+            },
         ]
 
     }
