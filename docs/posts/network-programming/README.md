@@ -27,8 +27,8 @@ article: false
   - [socket相关的数据结构](6种socket数据结构.md)
   - [IP与二进制转换](IP与二进制转换.md)
 - [从IPv4迁移到IPv6](从IPv4迁移到IPv6.md)
-- 各种System call
-  - getaddrinfo()—准备开始！
+- [各种System call](socket编程相关函数.md)
+  - [getaddrinfo()—准备开始！](getaddrinfo.md)
   - socket()—拿到文件描述符！
   - bind()—我在监听哪个端口?
   - connect()—嘿，你好啊！
