@@ -155,6 +155,7 @@ export default sidebar({
                 link: "socket编程相关函数.md",
                 children: [
                     "getaddrinfo.md",
+                    "socket.md",
                 ]
             },
         ]
