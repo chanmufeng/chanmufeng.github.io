@@ -7,14 +7,16 @@ article: false
 
 ## 2022年10月
 
-- 添加《[socket()—拿到套接字描述符！](/posts/network-programming/socket.md)》文章——2022.10.11
+- 添加《[listen()—会有人联系我吗?](/posts/network-programming/listen.md)》译文——2022.10.12
+- 添加《[bind()—我在监听哪个端口？](/posts/network-programming/bind.md)》译文——2022.10.12
+- 添加《[socket()—拿到套接字描述符！](/posts/network-programming/socket.md)》译文——2022.10.11
 - 添加《[getaddrinfo()](/posts/network-programming/getaddrinfo.md)》文章——2022.10.10
 - 添加《[从IPv4迁移到IPv6](/posts/network-programming/从IPv4迁移到IPv6.md)》文章——2022.10.08
 - 添加《[IP与二进制转换](/posts/network-programming/IP与二进制转换.md)》文章——2022.10.07
 - 添加《[6种socket数据结构](/posts/network-programming/6种socket数据结构.md)》文章——2022.10.06
 - 添加《[字节序](/posts/network-programming/字节序.md)》文章——2022.10.05
 - 添加《[IPv4与IPv6](/posts/network-programming/IPv4-IPv6.md)》文章——2022.10.03
-- 添加《[漫谈网络](/posts/network-programming/漫谈网络.md)》翻译——2022.10.01
+- 添加《[漫谈网络](/posts/network-programming/漫谈网络.md)》译文——2022.10.01
 
 ## 2022年9月
 - 添加《[两种Internet Socket](/posts/network-programming/两种Internet-socket.md)》翻译——2022.09.30

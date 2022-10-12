@@ -156,6 +156,8 @@ export default sidebar({
                 children: [
                     "getaddrinfo.md",
                     "socket.md",
+                    "bind.md",
+                    "listen.md",
                 ]
             },
         ]
