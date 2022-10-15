@@ -172,6 +172,7 @@ export default sidebar({
                 children: [
                     "stream-server-sample.md",
                     "stream-client-sample.md",
+                    "Datagram-Sockets.md",
                 ]
             },
         ]
