@@ -33,8 +33,8 @@ article: false
   - [bind()—我在监听哪个端口?](bind.md)
   - [connect()—嘿，你好啊！](connect.md)
   - [listen()—会有人联系我吗?](listen.md)
-  - accept()—感谢呼叫3490端口
-  - send() and recv()—跟我唠唠吧，宝儿!
+  - [accept()—感谢呼叫3490端口](accept.md)
+  - [send() and recv()—跟我唠唠吧，宝儿!](send-recv.md)
   - sendto() and recvfrom()—用DGRAM风格跟我说话
   - close() and shutdown()—滚犊子！
   - getpeername()—你哪位?

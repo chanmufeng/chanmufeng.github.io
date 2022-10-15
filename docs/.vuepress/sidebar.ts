@@ -158,6 +158,8 @@ export default sidebar({
                     "socket.md",
                     "bind.md",
                     "listen.md",
+                    "accept.md",
+                    "send-recv.md",
                 ]
             },
         ]

@@ -6,7 +6,8 @@ article: false
 ---
 
 ## 2022年10月
-
+- 添加《[send() and recv()—跟我唠唠吧，宝儿!](/posts/network-programming/send-recv.md)》译文——2022.10.12
+- 添加《[accept()—感谢呼叫3490端口](/posts/network-programming/accept.md)》译文——2022.10.12
 - 添加《[listen()—会有人联系我吗?](/posts/network-programming/listen.md)》译文——2022.10.12
 - 添加《[bind()—我在监听哪个端口？](/posts/network-programming/bind.md)》译文——2022.10.12
 - 添加《[socket()—拿到套接字描述符！](/posts/network-programming/socket.md)》译文——2022.10.11
