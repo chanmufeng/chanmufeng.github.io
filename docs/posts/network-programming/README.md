@@ -35,13 +35,13 @@ article: false
   - [listen()—会有人联系我吗?](listen.md)
   - [accept()—感谢呼叫3490端口](accept.md)
   - [send() and recv()—跟我唠唠吧，宝儿!](send-recv.md)
-  - sendto() and recvfrom()—用DGRAM风格跟我说话
-  - close() and shutdown()—滚犊子！
-  - getpeername()—你哪位?
-  - gethostname()—我是谁?
-- Client-Server基础
-  - 一个简单的流服务器
-  - 一个简单的流客户端
+  - [sendto() and recvfrom()—用DGRAM风格跟我说话](sendto-recvfrom.md)
+  - [close() and shutdown()—滚犊子！](close-shutdown.md)
+  - [getpeername()—你哪位?](getpeername.md)
+  - [gethostname()—我是谁?](gethostname.md)
+- [Client-Server基础](client-server.md)
+  - [一个简单的stream server](stream-server-sample.md)
+  - [一个简单的stream client](stream-client-sample.md)
   - Datagram Sockets
 - 技术进阶
   - Blocking—何谓阻塞？

@@ -6,6 +6,13 @@ article: false
 ---
 
 ## 2022年10月
+- 添加《[一个简单的stream client](/posts/network-programming/stream-client-sample.md)》译文——2022.10.15
+- 添加《[一个简单的stream server](/posts/network-programming/stream-server-sample.md)》译文——2022.10.15
+- 添加《[Client-Server基础](/posts/network-programming/client-server.md)》译文——2022.10.15
+- 添加《[gethostname()—我是谁?](/posts/network-programming/gethostname.md)》译文——2022.10.15
+- 添加《[getpeername()—你哪位?](/posts/network-programming/getpeername.md)》译文——2022.10.15
+- 添加《[close() and shutdown()—滚犊子！](/posts/network-programming/close-shutdown.md)》译文——2022.10.15
+- 添加《[sendto() and recvfrom()—用DGRAM风格跟我说话](/posts/network-programming/sendto-recvfrom.md)》译文——2022.10.15
 - 添加《[send() and recv()—跟我唠唠吧，宝儿!](/posts/network-programming/send-recv.md)》译文——2022.10.12
 - 添加《[accept()—感谢呼叫3490端口](/posts/network-programming/accept.md)》译文——2022.10.12
 - 添加《[listen()—会有人联系我吗?](/posts/network-programming/listen.md)》译文——2022.10.12

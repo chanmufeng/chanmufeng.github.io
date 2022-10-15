@@ -160,6 +160,18 @@ export default sidebar({
                     "listen.md",
                     "accept.md",
                     "send-recv.md",
+                    "sendto-recvfrom.md",
+                    "close-shutdown.md",
+                    "getpeername.md",
+                    "gethostname.md",
+                ]
+            },
+            {
+                text: "Client-Server基础",
+                link: "client-server.md",
+                children: [
+                    "stream-server-sample.md",
+                    "stream-client-sample.md",
                 ]
             },
         ]
