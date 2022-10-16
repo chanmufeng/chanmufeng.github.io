@@ -6,7 +6,10 @@ article: false
 ---
 
 ## 2022年10月
-- 添加《[Datagram Sockets](/posts/network-programming/Datagram-Sockets.md)》译文——2022.10.15
+
+- 添加《[poll()—同步的I/O多路复用](/posts/network-programming/poll.md)》译文——2022.10.15
+- 添加《[Blocking—何谓阻塞？](/posts/network-programming/blocking.md)》译文——2022.10.15
+- 添加《[技术进阶](/posts/network-programming/slightly-advanced-tech.md)》译文——2022.10.15
 - 添加《[一个简单的stream client](/posts/network-programming/stream-client-sample.md)》译文——2022.10.15
 - 添加《[一个简单的stream server](/posts/network-programming/stream-server-sample.md)》译文——2022.10.15
 - 添加《[Client-Server基础](/posts/network-programming/client-server.md)》译文——2022.10.15

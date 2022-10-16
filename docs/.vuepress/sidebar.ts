@@ -175,6 +175,14 @@ export default sidebar({
                     "Datagram-Sockets.md",
                 ]
             },
+            {
+                text: "技术进阶",
+                link: "slightly-advanced-tech.md",
+                children: [
+                    "blocking.md",
+                    "poll.md",
+                ]
+            },
         ]
 
     }

@@ -43,9 +43,9 @@ article: false
   - [一个简单的stream server](stream-server-sample.md)
   - [一个简单的stream client](stream-client-sample.md)
   - [Datagram Sockets](Datagram-Sockets.md)
-- 技术进阶
-  - Blocking—何谓阻塞？
-  - poll()—同步的I/O多路复用
+- [技术进阶](slightly-advanced-tech.md)
+  - [Blocking—何谓阻塞？](blocking.md)
+  - [poll()—同步的I/O多路复用](poll.md)
   - select()—老古董的同步I/O多路复用
   - 数据只传了一部分怎么办？
   - Serialization-如何封装数据？
