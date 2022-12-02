@@ -62,6 +62,7 @@ export default sidebar({
                 icon: "lock",
                 children: [
                     "事务的隔离性与MVCC",
+                    "MySQL锁开篇",
                 ]
             },
             {
