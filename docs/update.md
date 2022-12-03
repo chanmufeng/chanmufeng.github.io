@@ -5,7 +5,7 @@ pageInfo: false
 article: false
 ---
 ## 2022年12月
-- 添加《[MySQL锁，锁的到底是什么？](/posts/storage/MySQL/MySQL锁)》文章——2022.12.02
+- 添加《[MySQL锁，锁的到底是什么？](/posts/storage/MySQL/MySQL锁开篇)》文章——2022.12.02
 
 
 ## 2022年10月
