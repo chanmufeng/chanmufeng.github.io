@@ -1,9 +1,13 @@
 ---
 title: Socket编程简明教程
 index: false
-article: false
-# category:
-#  - linux
+article: true
+# 设置写作时间
+date: 2022-10-05
+description: '这是一本socket编程的入门小册。学习编程，你肯定听过"socket"，或许你也想搞明白这到底是个什么东西，那就点进来看看吧。'
+# 一个页面可以有多个标签
+tag:
+- socket编程
 ---
 
 
@@ -55,3 +59,4 @@ article: false
 - [使用手册](https://www.chanmufeng.com/posts/network-programming/network-programming.html#_10-man%E6%89%8B%E5%86%8C)
 - [参考资料](https://www.chanmufeng.com/posts/network-programming/network-programming.html#_10-9-shutdown)
 - [后记](https://www.chanmufeng.com/posts/network-programming/network-programming.html#_12-%E5%90%8E%E8%AE%B0)
+  

@@ -98,6 +98,13 @@ export default sidebar({
                     "鸡肋的Redis事务",
                 ]
             },
+            {
+                text: "3. 高性能原理",
+                icon: "condition",
+                children: [
+                    "网络模型开篇",
+                ]
+            },
 
         ],
 
