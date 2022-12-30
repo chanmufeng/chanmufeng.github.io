@@ -99,7 +99,7 @@ export default sidebar({
                 ]
             },
             {
-                text: "3. 高性能原理",
+                text: "3. 高性能网络模型",
                 icon: "condition",
                 children: [
                     "网络模型开篇",
