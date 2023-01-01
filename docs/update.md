@@ -5,7 +5,7 @@ pageInfo: false
 article: false
 ---
 ## 2022年12月
-- 添加《[Redis的网络模型究竟有多强](/posts/storage/Redis/网络模型开篇)》文章——2022.12.26
+- 添加《[BIO与非阻塞IO](/posts/storage/Redis/BIO与非阻塞IO)》文章——2022.12.26
 - 添加《[MySQL锁，锁的到底是什么？](/posts/storage/MySQL/MySQL锁开篇)》文章——2022.12.02
 
 
