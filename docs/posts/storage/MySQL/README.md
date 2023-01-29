@@ -19,7 +19,7 @@ category:
 
 ## 事务与锁
 - [事务的隔离性与MVCC](事务的隔离性与MVCC.md)
-
+- [MySQL锁，锁的到底是什么](MySQL锁开篇.md)
 ## 数据一致性
 - [MySQL与Redis的数据一致性](MySQL与Redis的数据一致性.md)
 
