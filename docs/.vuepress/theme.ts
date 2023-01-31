@@ -11,7 +11,8 @@ export default hopeTheme({
         url: "https://www.chanmufeng.com",
     },
 
-    iconAssets: "//at.alicdn.com/t/c/font_3612031_k0gsen6dojg.css",
+    // iconfont Font class在线链接
+    iconAssets: "//at.alicdn.com/t/c/font_3612031_i34n1zuy2c.css",
 
     logo: "https://img-blog.csdnimg.cn/d16e11af2edb4972833f88083d2f0375.png",
 
