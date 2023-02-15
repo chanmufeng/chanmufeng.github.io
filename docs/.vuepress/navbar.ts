@@ -66,12 +66,14 @@ export default navbar([
     link: "/update.md",
   },
   {
+    text: "友链",
+    icon: "lianjie",
+    link: "/myFriends.md",
+  },
+  {
     text: "",
     icon: "bilibili",
     link: "https://space.bilibili.com/519360358",
   },
 ]);
 
-
-27
-28
