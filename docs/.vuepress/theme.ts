@@ -14,7 +14,7 @@ export default hopeTheme({
     // iconfont Font class在线链接
     iconAssets: "//at.alicdn.com/t/c/font_3612031_eo3afmpcjlm.css",
 
-    logo: "https://img-blog.csdnimg.cn/d16e11af2edb4972833f88083d2f0375.png",
+    logo: "https://qiniu.chanmufeng.com/blog/avatar.png",
 
     repo: "chanmufeng/chanmufeng.github.io",
 

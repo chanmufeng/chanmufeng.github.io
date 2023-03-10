@@ -17,11 +17,11 @@ tag:
 
 -   如果缓存在Redis中存在，即缓存命中，则直接返回数据
 
-![image.png](https://img-blog.csdnimg.cn/img_convert/57a39d66fee719aa26c3a97a2b1e2e23.png)
+![image.png](https://qiniu.chanmufeng.com/2023-03-10-075725.png)
 -   如果Redis中没有对应缓存，则需要直接查询数据库，然后存入Redis，最后把数据返回
 
 
-![image_1.png](https://img-blog.csdnimg.cn/img_convert/2da871adc5bb46e775018795796cf922.png)
+![image_1.png](https://qiniu.chanmufeng.com/2023-03-10-075730.png)
 
 通常情况下，我们会为某个缓存设置一个key值，并针对key值设置一个过期时间，如果被查询的数据对应的key过期了，则直接查询数据库，并将查询得到的数据存入Redis，然后重置过期时间，最后将数据返回，伪代码如下：
 
@@ -76,7 +76,7 @@ public User getUserInfo(String userName) {
 第1种不用考虑了，下面讨论一下「先更新数据库，再更新缓存」这种方案。
 
 
-![image_2.png](https://img-blog.csdnimg.cn/img_convert/b05232abe776aeff5296aeff35f17a86.png)
+![image_2.png](https://qiniu.chanmufeng.com/2023-03-10-075737.png)
 
 如果线程1和线程2同时进行更新操作，但是每个线程的执行顺序如上图所示，此时就会导致数据不一致，因此从这个角度上我们推荐直接使用删除缓存的方式。
 
@@ -104,7 +104,7 @@ public User getUserInfo(String userName) {
 如果删除缓存失败，我们可以捕获这个异常，把需要删除的 key 发送到消息队列。自己创建一个消费者消费，尝试再次删除这个 key，直到删除成功为止。
 
 
-![image_3.png](https://img-blog.csdnimg.cn/img_convert/a523dc992b11c89e9aae2e4c6f41e994.png)
+![image_3.png](https://qiniu.chanmufeng.com/2023-03-10-075742.png)
 
 这种方式有个缺点，首先会对业务代码造成入侵，其次引入了消息队列，增加了系统的不确定性。
 
@@ -124,12 +124,12 @@ public User getUserInfo(String userName) {
 1.  删除缓存成功，更新数据库失败。在多线程下可能会出现数据不一致的问题
 
 
-![image_4.png](https://img-blog.csdnimg.cn/img_convert/916e92f0ad165a52f81c099e81c768f2.png)
+![image_4.png](https://qiniu.chanmufeng.com/2023-03-10-075748.png)
 
 这时，Redis中存储的旧数据，数据库的值是新数据，导致数据不一致。这时我们可以采用**延时双删**的策略，即更新数据库数据之后，再删除一次缓存。
 
 
-![image_5.png](https://img-blog.csdnimg.cn/img_convert/ab9e37d1c22e3cb19f41e6b02454c4d6.png)
+![image_5.png](https://qiniu.chanmufeng.com/2023-03-10-075753.png)
 
 用伪代码表示就是：
 

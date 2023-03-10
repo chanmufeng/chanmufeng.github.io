@@ -1,18 +1,14 @@
----
-title: 主要功能与配置演示
-index: false
-icon: creative
-article: false
-category:
-  - 使用指南
----
 
-## 目录
+## 标题1
 
-- [Markdown 展示](markdown.md)
+### 标题1.1
 
-- [页面展示](page.md)
+## 标题2
 
-- [禁用展示](disable.md)
+### 标题2.1
 
-- [加密展示](encrypt.md)
+#### 标题2.1.1
+
+#### 标题2.1.2
+
+### 标题2.2
